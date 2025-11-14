@@ -10,16 +10,49 @@
   "use strict";
 
   /**
+   * Dark Mode Toggle
+   */
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+
+  // Check for saved theme preference or default to 'light' mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+  }
+
+  // Toggle dark mode
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      // Save theme preference
+      const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+
+      // Add smooth transition effect
+      themeToggle.style.transform = 'rotate(360deg)';
+      setTimeout(() => {
+        themeToggle.style.transform = 'rotate(0deg)';
+      }, 300);
+    });
+  }
+
+  /**
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
     document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
+    const icon = headerToggleBtn.querySelector('i');
+    icon.classList.toggle('bi-list');
+    icon.classList.toggle('bi-x');
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links

@@ -43,48 +43,74 @@
   </head>
 
   <body class="index-page">
+    <!-- Header Controls (Dark Mode & Menu Toggle) -->
+    <div class="header-controls">
+      <button class="liquid-glass-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="bi bi-sun-fill"></i>
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+      <button class="liquid-glass-btn header-toggle d-lg-none" id="menuToggle" aria-label="Toggle menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
     <header
       id="header"
-      class="header d-flex flex-column justify-content-center"
+      class="header d-flex flex-column"
     >
-      <i class="header-toggle d-xl-none bi bi-list"></i>
+      <!-- Profile Section -->
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="Thushan Vithana" class="img-fluid">
+        <h1>Thushan Vithana</h1>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" target="_blank" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://github.com/thushanvithana" target="_blank" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://www.youtube.com/@ThushanVithana" target="_blank" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+          </a>
+        </div>
+      </div>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
             <a href="#hero" class="active">
-              <i class="bi bi-house navicon"></i><span>Home</span>
+              <i class="bi bi-house"></i><span>Home</span>
+              <span class="nav-tooltip">Home</span>
             </a>
           </li>
-                <li>
+          <li>
             <a href="#resume">
-              <i class="bi bi-file-person navicon"></i><span>Background</span>
+              <i class="bi bi-file-person"></i><span>Background</span>
+              <span class="nav-tooltip">Background</span>
             </a>
           </li>
-          <!-- <li>
-            <a href="#about">
-              <i class="bi bi-person-circle navicon"></i><span>About</span>
-            </a>
-          </li> -->
           <li>
             <a href="#tools">
-              <i class="bi bi-tools navicon"></i><span>Tools</span>
+              <i class="bi bi-tools"></i><span>Tools</span>
+              <span class="nav-tooltip">Tools</span>
             </a>
           </li>
-    
           <li>
             <a href="#portfolio">
-              <i class="bi bi-briefcase navicon"></i><span>Projects</span>
+              <i class="bi bi-briefcase"></i><span>Projects</span>
+              <span class="nav-tooltip">Projects</span>
             </a>
           </li>
           <li>
             <a href="#services">
-              <i class="bi bi-card-checklist navicon"></i><span>Services</span>
+              <i class="bi bi-card-checklist"></i><span>Services</span>
+              <span class="nav-tooltip">Services</span>
             </a>
           </li>
           <li>
             <a href="#contact">
-              <i class="bi bi-envelope-at navicon"></i><span>Contact</span>
+              <i class="bi bi-envelope-at"></i><span>Contact</span>
+              <span class="nav-tooltip">Contact</span>
             </a>
           </li>
         </ul>

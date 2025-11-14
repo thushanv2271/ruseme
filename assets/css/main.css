@@ -122,6 +122,86 @@
   --contrast-color: #ffffff;
 }
 
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #0f172a;
+  --default-color: #e2e8f0;
+  --heading-color: #f1f5f9;
+  --surface-color: #1e293b;
+  --gray-50: #1e293b;
+  --gray-100: #334155;
+  --gray-200: #475569;
+  --gray-300: #64748b;
+  --gray-400: #94a3b8;
+  --gray-500: #cbd5e1;
+  --gray-600: #e2e8f0;
+  --gray-700: #f1f5f9;
+  --gray-800: #f8fafc;
+  --gray-900: #ffffff;
+}
+
+body.dark-mode .header {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .liquid-glass-btn {
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--gray-600);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .navmenu a {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--gray-600);
+}
+
+body.dark-mode .card-modern,
+body.dark-mode .stats .stats-item,
+body.dark-mode .services .service-item,
+body.dark-mode .contact .info-item,
+body.dark-mode .contact .php-email-form {
+  background: var(--surface-color);
+  border-color: rgba(148, 163, 184, 0.1);
+}
+
+body.dark-mode .portfolio .portfolio-item {
+  background: var(--surface-color);
+}
+
+/* Dark mode toggle animation */
+.theme-toggle {
+  position: relative;
+}
+
+.theme-toggle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle .bi-sun-fill {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.theme-toggle .bi-moon-stars-fill {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+body.dark-mode .theme-toggle .bi-sun-fill {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+body.dark-mode .theme-toggle .bi-moon-stars-fill {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -226,43 +306,132 @@ h6 { font-size: 1rem; }
 }
 
 /*--------------------------------------------------------------
-# Global Header - Modern Glassmorphism Design
+# Global Header - Compact Liquid Glass Design
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  padding: 30px 20px;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  padding: 25px 15px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 997;
-  min-width: 200px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-right: 1px solid rgba(59, 130, 246, 0.1);
-  box-shadow: var(--shadow-lg);
+  width: 80px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 24px;
+}
+
+.header:hover {
+  width: 240px;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Profile section in header */
+.header .profile {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header:hover .profile {
+  opacity: 1;
+}
+
+.header .profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.header .profile img:hover {
+  transform: scale(1.05);
+  border-color: var(--accent-color);
+}
+
+.header .profile h1 {
+  font-size: 18px;
+  margin: 15px 0 5px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .profile .social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.header .profile .social-links a {
+  width: 32px;
+  height: 32px;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: var(--accent-color);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.header .profile .social-links a:hover {
+  background: var(--gradient-accent);
+  color: white;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1199px) {
   .header {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    width: 300px;
-    left: -100%;
+    top: 0;
+    left: -280px;
+    bottom: 0;
+    width: 280px;
+    border-radius: 0 24px 24px 0;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .header .profile {
+    opacity: 1;
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1600px) {
+@media (min-width: 1200px) {
   .header ~ main {
-    margin-left: 160px;
+    margin-left: 120px;
   }
 
   .header ~ main .hero {
-    margin-left: -160px;
+    margin-left: -120px;
     width: 100vw;
   }
 }
@@ -271,33 +440,67 @@ h6 { font-size: 1rem; }
   left: 0;
 }
 
-.header .header-toggle {
-  color: var(--contrast-color);
-  background: var(--gradient-accent);
-  font-size: 22px;
+/* Liquid Glass Toggle Buttons */
+.header-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  gap: 12px;
+}
+
+.liquid-glass-btn {
+  color: var(--default-color);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
-  border-radius: 15px;
+  border-radius: 16px;
   cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.header .header-toggle:hover {
-  color: var(--contrast-color);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl);
+.liquid-glass-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.liquid-glass-btn:hover::before {
+  left: 100%;
+}
+
+.liquid-glass-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.liquid-glass-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.header .header-toggle {
+  color: var(--default-color);
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu - Modern Smooth Design
+# Navigation Menu - Compact Liquid Glass Design
 --------------------------------------------------------------*/
 .navmenu {
   padding: 0;
@@ -306,9 +509,8 @@ h6 { font-size: 1rem; }
 
 .navmenu ul {
   list-style: none;
-  padding: 0 0 20px 0;
+  padding: 0;
   margin: 0;
-  width: 140px;
 }
 
 .navmenu a,
@@ -317,68 +519,117 @@ h6 { font-size: 1rem; }
   font-family: var(--nav-font);
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  margin-bottom: 10px;
-  font-size: 15px;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 12px;
+  font-size: 22px;
   font-weight: 500;
-  border-radius: 16px;
-  background: var(--gray-100);
-  height: 56px;
-  width: 100%;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.05);
+  height: 50px;
+  width: 50px;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+}
+
+.header:hover .navmenu a,
+.header:hover .navmenu a:focus {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0 20px;
 }
 
 .navmenu a i,
 .navmenu a:focus i {
   font-size: 20px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  min-width: 20px;
 }
 
 .navmenu a span,
 .navmenu a:focus span {
-  padding: 0 5px 0 10px;
+  padding: 0 0 0 15px;
   white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-size: 15px;
 }
 
-@media (min-width: 992px) {
-  .navmenu a,
-  .navmenu a:focus {
-    max-width: 56px;
-  }
-
-  .navmenu a span,
-  .navmenu a:focus span {
-    display: none;
-  }
+.header:hover .navmenu a span {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .navmenu a:hover,
 .navmenu .active,
-.navmenu .active:focus,
-.navmenu li:hover > a {
+.navmenu .active:focus {
   color: var(--contrast-color);
   background: var(--gradient-accent);
-  transform: translateX(5px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  transform: scale(1.05);
 }
 
 .navmenu a:hover i,
-.navmenu .active i,
-.navmenu li:hover > a i {
-  transform: scale(1.1);
+.navmenu .active i {
+  transform: rotate(5deg) scale(1.1);
 }
 
-.navmenu a:hover,
-.navmenu li:hover > a {
-  max-width: 100%;
-  color: var(--contrast-color);
+.navmenu a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.navmenu a:hover span,
-.navmenu li:hover > a span {
-  display: block;
+.navmenu a:hover::after {
+  opacity: 1;
+}
+
+/* Tooltip for compact nav */
+.navmenu a .nav-tooltip {
+  position: absolute;
+  left: 70px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.navmenu a:hover .nav-tooltip {
+  opacity: 1;
+}
+
+.header:hover .navmenu a .nav-tooltip {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .navmenu a,
+  .navmenu a:focus {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+
+  .navmenu a span {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .navmenu a .nav-tooltip {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1890,3 +2141,332 @@ section,
   margin-bottom: 30px;
 }
 
+
+/*--------------------------------------------------------------
+# Enhanced User Interactions & Animations
+--------------------------------------------------------------*/
+
+/* Magnetic button effect */
+@keyframes magneticPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+}
+
+.btn-modern:hover {
+  animation: magneticPulse 1.5s infinite;
+}
+
+/* Ripple effect for cards */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.card-modern::before,
+.portfolio .portfolio-item::before,
+.services .service-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.card-modern:active::before,
+.portfolio .portfolio-item:active::before,
+.services .service-item:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Smooth hover lift for all interactive elements */
+.interactive-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Parallax scroll effect */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Liquid glass effect for sections */
+.liquid-glass-section {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+body.dark-mode .liquid-glass-section {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* Scroll reveal animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Progress bar animation enhancement */
+.skills .progress-bar {
+  position: relative;
+  overflow: visible;
+}
+
+.skills .progress-bar::before {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  bottom: -2px;
+  width: 4px;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Enhanced portfolio hover effects */
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.portfolio .portfolio-item:hover::after {
+  width: 500px;
+  height: 500px;
+}
+
+/* Smooth section transitions */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  opacity: 0.3;
+}
+
+/*--------------------------------------------------------------
+# Enhanced Responsive Design
+--------------------------------------------------------------*/
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .hero h2 {
+    font-size: 48px;
+  }
+
+  .section-title h2 {
+    font-size: 36px;
+  }
+
+  .liquid-glass-section {
+    padding: 30px 20px;
+  }
+
+  .header ~ main {
+    margin-left: 0;
+  }
+
+  .header ~ main .hero {
+    margin-left: 0;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .section-title p {
+    font-size: 16px;
+  }
+
+  .services .service-item {
+    padding: 40px 25px;
+  }
+
+  .stats .stats-item {
+    padding: 25px 15px;
+  }
+
+  .liquid-glass-section {
+    padding: 25px 15px;
+    border-radius: 16px;
+  }
+
+  .header-controls {
+    top: 15px;
+    right: 15px;
+  }
+
+  .liquid-glass-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero .social-links a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .portfolio .portfolio-filters li {
+    padding: 8px 16px;
+    font-size: 13px;
+    margin: 0 4px 8px 4px;
+  }
+
+  .services .service-item {
+    padding: 30px 20px;
+  }
+
+  .services .service-item .icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .services .service-item .icon i {
+    font-size: 32px;
+  }
+
+  .stats .stats-item span {
+    font-size: 36px;
+  }
+
+  .contact .php-email-form {
+    padding: 20px;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .hero h2 {
+    font-size: 80px;
+  }
+
+  .section-title h2 {
+    font-size: 52px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
