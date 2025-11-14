@@ -51,24 +51,60 @@
   }
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors - Modern Professional Palette */
 :root {
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  /* Primary Brand Colors */
+  --background-color: #f8f9fa; /* Soft off-white background */
+  --default-color: #2c3e50; /* Deep blue-gray for text */
+  --heading-color: #1a252f; /* Rich dark for headings */
+  --accent-color: #3b82f6; /* Modern electric blue */
+  --accent-secondary: #8b5cf6; /* Purple accent for variety */
+  --surface-color: #ffffff; /* Pure white for cards */
+  --contrast-color: #ffffff; /* White text on dark backgrounds */
+
+  /* Extended Color Palette */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-hero: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+
+  /* Semantic Colors */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --info-color: #06b6d4;
+
+  /* Neutral Grays */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors - Modern Navigation */
 :root {
-  --nav-color: #45505b; /* The default color of the main navmenu links */
-  --nav-hover-color: #0563bb; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #0563bb; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #4b5563; /* Muted gray for nav */
+  --nav-hover-color: #3b82f6; /* Modern blue hover */
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #4b5563;
+  --nav-dropdown-hover-color: #3b82f6;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -92,23 +128,28 @@
 }
 
 /*--------------------------------------------------------------
-# General Styling & Shared Classes
+# General Styling & Shared Classes - Modern Professional
 --------------------------------------------------------------*/
 body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: var(--accent-secondary);
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
 h1,
@@ -119,7 +160,18 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
 }
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
 /* PHP Email Form Messages
 ------------------------------*/
@@ -174,7 +226,7 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Header
+# Global Header - Modern Glassmorphism Design
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
@@ -182,18 +234,23 @@ h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 0 15px;
-  transition: all ease-in-out 0.3s;
+  padding: 30px 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
   z-index: 997;
   min-width: 200px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(59, 130, 246, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 @media (max-width: 1199px) {
   .header {
-    background-color: var(--background-color);
-    border-right: 1px solid
-      color-mix(in srgb, var(--default-color), transparent 90%);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     width: 300px;
     left: -100%;
   }
@@ -216,29 +273,31 @@ h6 {
 
 .header .header-toggle {
   color: var(--contrast-color);
-  background-color: var(--accent-color);
+  background: var(--gradient-accent);
   font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
   cursor: pointer;
   position: fixed;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
   z-index: 9999;
-  transition: background-color 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
 }
 
 .header .header-toggle:hover {
   color: var(--contrast-color);
-  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu - Modern Smooth Design
 --------------------------------------------------------------*/
 .navmenu {
   padding: 0;
@@ -258,25 +317,29 @@ h6 {
   font-family: var(--nav-font);
   display: flex;
   align-items: center;
-  padding: 10px 18px;
-  margin-bottom: 8px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
   font-size: 15px;
-  border-radius: 50px;
-  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  font-weight: 500;
+  border-radius: 16px;
+  background: var(--gray-100);
   height: 56px;
   width: 100%;
   overflow: hidden;
-  transition: 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .navmenu a i,
 .navmenu a:focus i {
   font-size: 20px;
+  transition: transform 0.3s ease;
 }
 
 .navmenu a span,
 .navmenu a:focus span {
-  padding: 0 5px 0 7px;
+  padding: 0 5px 0 10px;
+  white-space: nowrap;
 }
 
 @media (min-width: 992px) {
@@ -296,7 +359,15 @@ h6 {
 .navmenu .active:focus,
 .navmenu li:hover > a {
   color: var(--contrast-color);
-  background: var(--nav-hover-color);
+  background: var(--gradient-accent);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.navmenu a:hover i,
+.navmenu .active i,
+.navmenu li:hover > a i {
+  transform: scale(1.1);
 }
 
 .navmenu a:hover,
@@ -409,20 +480,24 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Scroll Top Button
+# Scroll Top Button - Modern Design
 --------------------------------------------------------------*/
 .scroll-top {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: -15px;
+  right: 20px;
+  bottom: -20px;
   z-index: 99999;
-  background-color: var(--accent-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
-  transition: all 0.4s;
+  background: var(--gradient-accent);
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-top i {
@@ -432,14 +507,15 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: var(--shadow-xl);
   color: var(--contrast-color);
 }
 
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
+  bottom: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -501,7 +577,7 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Global Section Titles
+# Global Section Titles - Modern Design
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
@@ -510,54 +586,54 @@ section,
 }
 
 .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: 800;
   margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   position: relative;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 .section-title h2:before {
   content: "";
   position: absolute;
   display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  margin: auto;
-}
-
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent-color);
+  width: 80px;
+  height: 5px;
+  background: var(--gradient-accent);
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
+  border-radius: 10px;
 }
 
 .section-title p {
   margin-bottom: 0;
+  font-size: 18px;
+  color: var(--gray-600);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# Hero Section - Modern Professional Design
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: 80px 0;
+  padding: 120px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background: var(--gradient-hero);
 }
 
 .hero img {
@@ -568,14 +644,37 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  opacity: 0.15;
 }
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.85) 50%, rgba(59, 130, 246, 0.9) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
+}
+
+/* Animated gradient background */
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+  animation: heroGradient 15s ease infinite;
+  z-index: 2;
+}
+
+@keyframes heroGradient {
+  0%, 100% {
+    transform: translate(0%, 0%) scale(1);
+  }
+  33% {
+    transform: translate(30%, -30%) scale(1.1);
+  }
+  66% {
+    transform: translate(-30%, 30%) scale(0.9);
+  }
 }
 
 .hero .container {
@@ -584,45 +683,85 @@ section,
 }
 
 .hero h2 {
-  margin: 0;
+  margin: 0 0 20px 0;
   font-size: 64px;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--contrast-color);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero p {
-  margin: 5px 0 0 0;
-  font-size: 26px;
+  margin: 20px 0 0 0;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 300;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .hero p span {
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 2px;
+  font-weight: 500;
 }
 
 .hero .social-links {
-  margin-top: 25px;
+  margin-top: 40px;
+  animation: fadeInUp 1.4s ease-out;
 }
 
 .hero .social-links a {
-  font-size: 20px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--contrast-color);
   line-height: 1;
   margin-right: 20px;
-  transition: 0.3s;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .hero .social-links a:hover {
-  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 80px 0;
+  }
+
   .hero h2 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .hero p {
     font-size: 20px;
+  }
+
+  .hero .social-links a {
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -657,79 +796,136 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Stats Section
+# Stats Section - Modern Design
 --------------------------------------------------------------*/
 .stats i {
-  background-color: var(--accent-color);
+  background: var(--gradient-accent);
   color: var(--contrast-color);
-  width: 54px;
-  height: 54px;
-  font-size: 24px;
-  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  border-radius: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
 }
 
 .stats .stats-item {
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
   position: relative;
   text-align: center;
   z-index: 0;
+  padding: 30px 20px;
+  background: var(--surface-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+}
+
+.stats .stats-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-color);
+}
+
+.stats .stats-item:hover i {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .stats .stats-item span {
-  font-size: 36px;
+  font-size: 48px;
   display: block;
-  font-weight: 700;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 15px;
 }
 
 .stats .stats-item p {
   padding: 0;
-  margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin: 10px 0 0 0;
+  color: var(--gray-600);
   font-size: 16px;
+  font-weight: 500;
 }
 
 /*--------------------------------------------------------------
-# Skills Section
+# Skills Section - Modern Progress Bars
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
   display: block;
   background: none;
   border-radius: 0;
+  margin-bottom: 25px;
 }
 
 .skills .progress .skill {
   color: var(--heading-color);
   padding: 0;
-  margin: 0 0 6px 0;
+  margin: 0 0 10px 0;
   text-transform: uppercase;
   display: block;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--heading-font);
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 .skills .progress .skill .val {
   float: right;
   font-style: normal;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
 }
 
 .skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
+  background: var(--gray-200);
+  height: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
 }
 
 .skills .progress-bar {
   width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
+  height: 12px;
+  transition: width 0.9s ease;
+  background: var(--gradient-accent);
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
+}
+
+.skills .progress-bar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -792,11 +988,11 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Portfolio Section
+# Portfolio Section - Modern Card Design
 --------------------------------------------------------------*/
 .portfolio .portfolio-filters {
   padding: 0;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 40px auto;
   list-style: none;
   text-align: center;
 }
@@ -804,63 +1000,83 @@ section,
 .portfolio .portfolio-filters li {
   cursor: pointer;
   display: inline-block;
-  padding: 8px 20px 10px 20px;
-  margin: 0;
+  padding: 12px 28px;
+  margin: 0 8px 12px 8px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
-  margin-bottom: 5px;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: var(--heading-font);
+  background: var(--gray-100);
+  color: var(--gray-700);
+  border: 2px solid transparent;
 }
 
-.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li:hover {
+  background: var(--gray-200);
+  transform: translateY(-2px);
+}
+
 .portfolio .portfolio-filters li.filter-active {
   color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
+  background: var(--gradient-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 @media (max-width: 575px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
-    margin: 0 0 10px 0;
+    padding: 10px 20px;
+    margin: 0 5px 10px 5px;
   }
 }
 
 .portfolio .portfolio-item {
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--surface-color);
+}
+
+.portfolio .portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.portfolio .portfolio-item img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio .portfolio-item:hover img {
+  transform: scale(1.05);
 }
 
 .portfolio .portfolio-item .portfolio-info {
   opacity: 0;
   position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 3;
-  transition: all ease-in-out 0.5s;
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
-  padding: 15px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+  padding: 30px 20px;
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--contrast-color);
+  margin-bottom: 8px;
   padding-right: 50px;
 }
 
 .portfolio .portfolio-item .portfolio-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   margin-bottom: 0;
   padding-right: 50px;
@@ -870,56 +1086,87 @@ section,
 .portfolio .portfolio-item .portfolio-info .details-link {
   position: absolute;
   right: 50px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: 0.3s;
+  font-size: 28px;
+  top: 30px;
+  color: var(--contrast-color);
+  transition: all 0.3s ease;
   line-height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  background: var(--accent-color);
+  transform: scale(1.1);
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
+  right: 15px;
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
-  bottom: 0;
 }
 
 /*--------------------------------------------------------------
-# Services Section
+# Services Section - Modern Card Design
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   height: 100%;
-  padding: 60px 30px;
+  padding: 50px 35px;
   text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.services .service-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.services .service-item:hover:before {
+  transform: scaleX(1);
 }
 
 .services .service-item .icon {
-  margin: 0 auto;
+  margin: 0 auto 30px;
   width: 100px;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: ease-in-out 0.3s;
+  transition: all 0.4s ease;
   position: relative;
+  background: var(--gradient-accent);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
 }
 
 .services .service-item .icon i {
-  font-size: 36px;
-  transition: 0.5s;
+  font-size: 42px;
+  transition: all 0.4s ease;
   position: relative;
+  color: var(--contrast-color);
+  z-index: 2;
 }
 
 .services .service-item .icon svg {
@@ -935,18 +1182,27 @@ section,
 
 .services .service-item h3 {
   font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
 }
 
 .services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
+  line-height: 1.8;
+  font-size: 15px;
   margin-bottom: 0;
+  color: var(--gray-600);
 }
 
 .services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-color);
+}
+
+.services .service-item:hover .icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .services .service-item.item-cyan i {
@@ -1103,87 +1359,115 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Contact Section
+# Contact Section - Modern Design
 --------------------------------------------------------------*/
 .contact .info-item + .info-item {
-  margin-top: 40px;
+  margin-top: 30px;
+}
+
+.contact .info-item {
+  padding: 25px;
+  background: var(--surface-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+}
+
+.contact .info-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
 }
 
 .contact .info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
+  color: var(--contrast-color);
+  background: var(--gradient-accent);
+  font-size: 24px;
+  width: 56px;
+  height: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 14px;
   transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+  margin-right: 20px;
+  box-shadow: var(--shadow-md);
 }
 
 .contact .info-item h3 {
   padding: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: var(--heading-color);
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 15px;
+  color: var(--gray-600);
 }
 
 .contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  transform: scale(1.1) rotate(5deg);
 }
 
 .contact .php-email-form {
   height: 100%;
+  padding: 30px;
+  background: var(--surface-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
 }
 
 .contact .php-email-form input[type="text"],
 .contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
+  font-size: 15px;
+  padding: 14px 18px;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 12px;
   color: var(--default-color);
-  background-color: color-mix(
-    in srgb,
-    var(--background-color),
-    transparent 50%
-  );
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  background-color: var(--gray-50);
+  border: 2px solid var(--gray-200);
+  transition: all 0.3s ease;
+  font-family: var(--default-font);
 }
 
 .contact .php-email-form input[type="text"]:focus,
 .contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
+  background-color: var(--surface-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .contact .php-email-form input[type="text"]::placeholder,
 .contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: var(--gray-400);
 }
 
 .contact .php-email-form button[type="submit"] {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: var(--gradient-accent);
   border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
+  padding: 14px 40px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
 }
 
 /*--------------------------------------------------------------
@@ -1497,3 +1781,112 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Modern Utility Classes
+--------------------------------------------------------------*/
+.btn-modern {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--gradient-accent);
+  color: var(--contrast-color);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+  color: var(--contrast-color);
+}
+
+.card-modern {
+  background: var(--surface-color);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+}
+
+.card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-color);
+}
+
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Better Focus States */
+*:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+
+/* Hero Section Additional Animations */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+.wave-hand {
+  display: inline-block;
+  margin-left: 5px;
+  animation: wave 2s infinite ease-in-out;
+  transform-origin: 70% 70%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
