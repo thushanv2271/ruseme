@@ -1849,8 +1849,8 @@ body.dark-mode .hero:after {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 30px;
-  padding: 60px 40px;
+  border-radius: 32px;
+  padding: 64px 48px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
               inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -1889,7 +1889,7 @@ body.dark-mode .hero-glass-wrapper {
 
 /* Hero Title */
 .hero-title {
-  margin: 0 0 25px 0;
+  margin: 0 0 24px 0;
   font-size: 56px;
   font-weight: 800;
   color: white;
@@ -1932,7 +1932,7 @@ body.dark-mode .hero-glass-wrapper {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
-  margin: 0 0 30px 0;
+  margin: 0 0 32px 0;
 }
 
 body.dark-mode .hero-tagline {
@@ -1990,19 +1990,19 @@ body.dark-mode .hero-typed-text {
 
 /* Social Links Wrapper */
 .hero-social-wrapper {
-  margin-top: 45px;
+  margin-top: 48px;
 }
 
 .hero-social-links {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .hero-social-btn {
-  width: 55px;
-  height: 55px;
+  width: 56px;
+  height: 56px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -2061,7 +2061,7 @@ body.dark-mode .hero-social-btn:hover {
   }
 
   .hero-glass-wrapper {
-    padding: 50px 35px;
+    padding: 48px 32px;
   }
 
   .hero-title {
@@ -2077,8 +2077,8 @@ body.dark-mode .hero-social-btn:hover {
   }
 
   .hero-social-btn {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     font-size: 22px;
   }
 }
@@ -2090,7 +2090,7 @@ body.dark-mode .hero-social-btn:hover {
   }
 
   .hero-glass-wrapper {
-    padding: 40px 25px;
+    padding: 40px 24px;
     border-radius: 24px;
   }
 
@@ -2107,12 +2107,12 @@ body.dark-mode .hero-social-btn:hover {
   }
 
   .hero-social-links {
-    gap: 12px;
+    gap: 16px;
   }
 
   .hero-social-btn {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     font-size: 20px;
   }
 }
@@ -2124,7 +2124,7 @@ body.dark-mode .hero-social-btn:hover {
   }
 
   .hero-glass-wrapper {
-    padding: 35px 20px;
+    padding: 32px 24px;
   }
 
   .hero-title {
@@ -2144,7 +2144,7 @@ body.dark-mode .hero-social-btn:hover {
   }
 
   .hero-social-links {
-    gap: 10px;
+    gap: 16px;
   }
 
   .hero-social-btn {
