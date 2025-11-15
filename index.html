@@ -319,19 +319,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         </div>
         <!-- End Section Title -->
 
-        <!-- Animated Profile Section with Liquid Glass -->
+        <!-- Animated Profile Section with Liquid Glass & Three.js -->
         <div class="animated-profile-section">
           <div class="profile-animation-container">
-            <!-- Floating Liquid Orbs -->
-            <div class="liquid-orb orb-1"></div>
-            <div class="liquid-orb orb-2"></div>
-            <div class="liquid-orb orb-3"></div>
-            <div class="liquid-orb orb-4"></div>
-
-            <!-- Animated Rings -->
-            <div class="animated-ring ring-1"></div>
-            <div class="animated-ring ring-2"></div>
-            <div class="animated-ring ring-3"></div>
+            <!-- Three.js Canvas Background -->
+            <canvas id="profile-canvas" class="profile-canvas"></canvas>
 
             <!-- Profile Image with Liquid Glass Frame -->
             <div class="profile-glass-frame">
@@ -354,14 +346,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <span class="status-text">Available for opportunities</span>
               </div>
             </div>
-
-            <!-- Particle Effects -->
-            <div class="particle particle-1"></div>
-            <div class="particle particle-2"></div>
-            <div class="particle particle-3"></div>
-            <div class="particle particle-4"></div>
-            <div class="particle particle-5"></div>
-            <div class="particle particle-6"></div>
           </div>
         </div>
 
@@ -3173,6 +3157,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
+    <!-- Three.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <!-- Three.js Profile Animation -->
+    <script src="assets/js/profile-animation.js" defer></script>
 
     <!-- Main JS File -->
     <script src="assets/js/main.js" defer></script>
