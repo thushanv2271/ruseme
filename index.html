@@ -172,43 +172,123 @@
     </header>
 
     <main class="main">
-      <!-- Hero Section -->
+      <!-- Hero Section - Three.js Animated -->
       <section id="hero" class="hero section">
-        <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
-          <div class="row justify-content-center text-center">
-            <div class="col-lg-10">
-              <h2 class="hero-title">
-                Hi there <span class="wave-hand">👋</span><br>
-                I'm Thushan Vithana
-                <span class="d-block mt-3">🚀 Let's build something incredible together.</span>
-              </h2>
+        <!-- Three.js Canvas Background -->
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
 
-              <p class="hero-subtitle">
-                I'm
-                <span
-                  class="typed"
-                  data-typed-items="Designer, Developer, Software Engineer, UI/UX Designer, Team Player, Innovator, Photographer"
-                  >Designer</span
-                >
-              </p>
-              <div class="social-links d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#" aria-label="Instagram">
-                  <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" aria-label="LinkedIn">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://www.youtube.com/@ThushanVithana" aria-label="YouTube">
-                  <i class="bi bi-youtube"></i>
-                </a>
-                <a href="https://github.com/thushanvithana" aria-label="GitHub">
-                  <i class="bi bi-github"></i>
-                </a>
+        <!-- Animated Background Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+
+                <!-- Main Content Card -->
+                <div class="hero-glass-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+
+                  <!-- Greeting Badge -->
+                  <div class="hero-badge" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="wave-hand">👋</span>
+                    <span class="hero-badge-text">Welcome to my portfolio</span>
+                  </div>
+
+                  <!-- Main Heading -->
+                  <h1 class="hero-title" data-aos="fade-up" data-aos-delay="600">
+                    Hi, I'm <span class="hero-name-highlight">Thushan Vithana</span>
+                  </h1>
+
+                  <!-- Typing Effect Subtitle -->
+                  <div class="hero-subtitle-wrapper" data-aos="fade-up" data-aos-delay="800">
+                    <p class="hero-subtitle">
+                      <span class="hero-subtitle-label">I'm a</span>
+                      <span
+                        class="typed hero-typed"
+                        data-typed-items="Software Engineer, Full-Stack Developer, Mobile App Developer, UI/UX Designer, Tech Innovator, Creative Problem Solver"
+                      >Software Engineer</span>
+                    </p>
+                  </div>
+
+                  <!-- CTA Description -->
+                  <p class="hero-description" data-aos="fade-up" data-aos-delay="1000">
+                    <span class="hero-icon">🚀</span>
+                    Transforming ideas into elegant digital solutions with cutting-edge technology
+                  </p>
+
+                  <!-- Social Links - Liquid Glass Style -->
+                  <div class="hero-social-links" data-aos="fade-up" data-aos-delay="1200">
+                    <a href="https://github.com/thushanvithana" target="_blank" class="hero-social-link" aria-label="GitHub">
+                      <i class="bi bi-github"></i>
+                      <span class="hero-social-tooltip">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" target="_blank" class="hero-social-link" aria-label="LinkedIn">
+                      <i class="bi bi-linkedin"></i>
+                      <span class="hero-social-tooltip">LinkedIn</span>
+                    </a>
+                    <a href="https://www.youtube.com/@ThushanVithana" target="_blank" class="hero-social-link" aria-label="YouTube">
+                      <i class="bi bi-youtube"></i>
+                      <span class="hero-social-tooltip">YouTube</span>
+                    </a>
+                    <a href="#" target="_blank" class="hero-social-link" aria-label="Instagram">
+                      <i class="bi bi-instagram"></i>
+                      <span class="hero-social-tooltip">Instagram</span>
+                    </a>
+                  </div>
+
+                  <!-- CTA Buttons -->
+                  <div class="hero-cta-buttons" data-aos="fade-up" data-aos-delay="1400">
+                    <a href="#portfolio" class="btn-hero-primary">
+                      <i class="bi bi-briefcase-fill"></i>
+                      View My Work
+                    </a>
+                    <a href="#contact" class="btn-hero-secondary">
+                      <i class="bi bi-envelope-fill"></i>
+                      Get In Touch
+                    </a>
+                  </div>
+
+                  <!-- Tech Stack Icons -->
+                  <div class="hero-tech-stack" data-aos="fade-up" data-aos-delay="1600">
+                    <div class="hero-tech-label">Tech Stack:</div>
+                    <div class="hero-tech-icons">
+                      <span class="hero-tech-icon" data-tooltip="React">
+                        <i class="bi bi-layers-fill"></i>
+                      </span>
+                      <span class="hero-tech-icon" data-tooltip=".NET">
+                        <i class="bi bi-code-square"></i>
+                      </span>
+                      <span class="hero-tech-icon" data-tooltip="Node.js">
+                        <i class="bi bi-braces"></i>
+                      </span>
+                      <span class="hero-tech-icon" data-tooltip="Docker">
+                        <i class="bi bi-box-seam"></i>
+                      </span>
+                      <span class="hero-tech-icon" data-tooltip="Mobile">
+                        <i class="bi bi-phone-fill"></i>
+                      </span>
+                      <span class="hero-tech-icon" data-tooltip="Database">
+                        <i class="bi bi-database-fill"></i>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator" data-aos="fade-up" data-aos-delay="1800">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <p class="scroll-text">Scroll to explore</p>
+        </div>
+
       </section>
 
       <!-- About Section -->
@@ -1988,38 +2068,53 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   </p>
 </div>
 
-<!-- YouTube Thumbnail and Google Play Button -->
-<div class="row py-3">
-  <div class="col-lg-6">
-   
-
-    <p class="text-center pt-2 animate__animated animate__fadeIn animate__delay-3s">
-      <a
-        href="https://play.google.com/store/apps/details?id=com.thusha2271.scholarships&hl=en"
-        target="_blank"
-        class="btn btn-outline-primary btn-sm"
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-          alt="Get it on Google Play"
-          style="height: 20px; vertical-align: middle; margin-right: 8px;"
-        />
-        Get it on Google Play
-      </a>
-    </p>
+<!-- Google Play Button - Liquid Glass Design -->
+<div class="row py-4">
+  <div class="col-12">
+    <div class="app-download-card animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="app-download-content">
+        <div class="app-icon-wrapper">
+          <i class="bi bi-google-play"></i>
+        </div>
+        <div class="app-download-text">
+          <h5 class="app-download-title">Available on Google Play</h5>
+          <p class="app-download-subtitle">Download the SCOLA Scholarship App</p>
+        </div>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.thusha2271.scholarships&hl=en"
+          target="_blank"
+          class="btn-glass-primary"
+        >
+          <i class="bi bi-download"></i>
+          Download Now
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
-<p class="animate__animated animate__fadeInUp animate__delay-1s">
-  I’ve also worked on diverse projects ranging from mobile app development to
-  web platforms using advanced frameworks like
-  <span class="tech-highlight">React</span>,
-  <span class="tech-highlight">MERN stack</span>, and
-  <span class="tech-highlight">Docker</span>. My approach to solving
-  challenges involves a mix of creativity, teamwork, and a growth mindset. I
-  strive to keep learning new technologies and apply them effectively to
-  deliver high-quality solutions.
-</p>
+<!-- Tech Stack Description - Liquid Glass Design -->
+<div class="tech-description-card animate__animated animate__fadeInUp animate__delay-1s">
+  <p class="tech-description-text">
+    I've also worked on diverse projects ranging from mobile app development to
+    web platforms using advanced frameworks like
+    <span class="tech-badge">
+      <i class="bi bi-layers-fill"></i>
+      React
+    </span>,
+    <span class="tech-badge">
+      <i class="bi bi-stack"></i>
+      MERN stack
+    </span>, and
+    <span class="tech-badge">
+      <i class="bi bi-box-seam"></i>
+      Docker
+    </span>. My approach to solving
+    challenges involves a mix of creativity, teamwork, and a growth mindset. I
+    strive to keep learning new technologies and apply them effectively to
+    deliver high-quality solutions.
+  </p>
+</div>
 
 <!-- Project Photos Section -->
 <div class="row py-3">
@@ -3160,6 +3255,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
     <!-- Three.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <!-- Three.js Hero Animation -->
+    <script src="assets/js/hero-animation.js" defer></script>
 
     <!-- Three.js Profile Animation -->
     <script src="assets/js/profile-animation.js" defer></script>
