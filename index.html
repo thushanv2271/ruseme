@@ -109,63 +109,62 @@
       </button>
     </div>
 
-    <header
-      id="header"
-      class="header d-flex flex-column"
-    >
+    <header id="header" class="header d-flex flex-column">
       <!-- Profile Section -->
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="Thushan Vithana" class="img-fluid">
-        <h1>Thushan Vithana</h1>
+      <div class="profile-section">
+        <img src="assets/img/profile-img.jpg" alt="Thushan Vithana" class="profile-img">
+        <h1 class="profile-name">Thushan Vithana</h1>
+        <p class="profile-title">Software Engineer</p>
         <div class="social-links">
-          <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" target="_blank" aria-label="LinkedIn" class="social-link">
             <i class="bi bi-linkedin"></i>
           </a>
-          <a href="https://github.com/thushanvithana" target="_blank" aria-label="GitHub">
+          <a href="https://github.com/thushanvithana" target="_blank" aria-label="GitHub" class="social-link">
             <i class="bi bi-github"></i>
           </a>
-          <a href="https://www.youtube.com/@ThushanVithana" target="_blank" aria-label="YouTube">
+          <a href="https://www.youtube.com/@ThushanVithana" target="_blank" aria-label="YouTube" class="social-link">
             <i class="bi bi-youtube"></i>
           </a>
         </div>
       </div>
 
+      <!-- Navigation Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <a href="#hero" class="active">
-              <i class="bi bi-house"></i><span>Home</span>
-              <span class="nav-tooltip">Home</span>
+            <a href="#hero" class="nav-link active">
+              <i class="bi bi-house-door-fill"></i>
+              <span>Home</span>
             </a>
           </li>
           <li>
-            <a href="#resume">
-              <i class="bi bi-file-person"></i><span>Background</span>
-              <span class="nav-tooltip">Background</span>
+            <a href="#resume" class="nav-link">
+              <i class="bi bi-person-lines-fill"></i>
+              <span>Background</span>
             </a>
           </li>
           <li>
-            <a href="#tools">
-              <i class="bi bi-tools"></i><span>Tools</span>
-              <span class="nav-tooltip">Tools</span>
+            <a href="#tools" class="nav-link">
+              <i class="bi bi-gear-fill"></i>
+              <span>Tools</span>
             </a>
           </li>
           <li>
-            <a href="#portfolio">
-              <i class="bi bi-briefcase"></i><span>Projects</span>
-              <span class="nav-tooltip">Projects</span>
+            <a href="#portfolio" class="nav-link">
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+              <span>Projects</span>
             </a>
           </li>
           <li>
-            <a href="#services">
-              <i class="bi bi-card-checklist"></i><span>Services</span>
-              <span class="nav-tooltip">Services</span>
+            <a href="#services" class="nav-link">
+              <i class="bi bi-laptop-fill"></i>
+              <span>Services</span>
             </a>
           </li>
           <li>
-            <a href="#contact">
-              <i class="bi bi-envelope-at"></i><span>Contact</span>
-              <span class="nav-tooltip">Contact</span>
+            <a href="#contact" class="nav-link">
+              <i class="bi bi-envelope-fill"></i>
+              <span>Contact</span>
             </a>
           </li>
         </ul>
@@ -362,26 +361,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
        
         </div>
         <!-- End Section Title -->
-<div
-  class="col-lg-4 d-flex justify-content-center"
-  style="text-align: center; position: relative;"
->
-  <img
-    src="assets/img/profile-img.jpg"
-    class="img-fluid"
-    alt="Thushan Vithana"
-    loading="lazy"
-    style="
-      border: 5px solid transparent;
-      border-radius: 50%;
-      transition: all 0.5s ease-in-out;
-      width: 220px;
-      height: 220px;
-      animation: pulse-border 2s infinite;
-    "
-    onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#3498db';"
-    onmouseout="this.style.transform='scale(1)'; this.style.borderColor='transparent';"
-  />
+<div class="col-lg-4 d-flex justify-content-center align-items-center">
+  <div class="profile-image-container">
+    <img
+      src="assets/img/profile-img.jpg"
+      class="profile-image-about"
+      alt="Thushan Vithana"
+      loading="lazy"
+    />
+  </div>
 </div>
         <div class="container">
           <div class="row">
