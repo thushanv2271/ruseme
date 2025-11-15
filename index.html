@@ -2204,7 +2204,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                   alt=""
                 />
                 <div class="portfolio-info">
-                  <h4>AUTOWAG - Vehile Rental System</h4>
+                  <h4>AUTOWAG - Vehicle Rental System</h4>
                   <a
                     href="AUTOWAG-project.html"
                     title="More Details"
@@ -2260,7 +2260,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="portfolio-info">
                   <h4>Simple Portfolio</h4>
                   <a
-                    href="simple -project.html"
+                    href="simple-project.html"
                     title="More Details"
                     class="details-link"
                     ><i class="bi bi-link-45deg custom-icon"></i>
@@ -2366,7 +2366,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                   alt=""
                 />
                 <div class="portfolio-info">
-                  <h4>NEXT JS Portfolio</h4>
+                  <h4>Next.js Portfolio</h4>
                   <a
                     href="next-project.html"
                     title="More Details"
@@ -2552,7 +2552,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                   alt=""
                 />
                 <div class="portfolio-info">
-                  <h4>Swift UI</h4>
+                  <h4>SwiftUI</h4>
                   <a
                     href="swiftUi-project.html"
                     title="More Details"
@@ -2893,7 +2893,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <p>
                   Developing tailored software solutions across multiple
                   programming languages and frameworks. Expertise in Java,
-                  Python
+                  Python, JavaScript, and modern development technologies.
                   <a href="service-details.html" class="stretched-link"></a>
                 </p>
               </div>
@@ -3059,6 +3059,68 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       class="scroll-top d-flex align-items-center justify-content-center"
       ><i class="bi bi-arrow-up-short"></i
     ></a>
+
+    <!-- Chatbot - Liquid Glass Design -->
+    <div id="chatbot-container" class="chatbot-container">
+      <!-- Chat Window -->
+      <div id="chat-window" class="chat-window">
+        <!-- Chat Header -->
+        <div class="chat-header">
+          <div class="chat-header-content">
+            <div class="chat-avatar">
+              <i class="bi bi-robot"></i>
+            </div>
+            <div class="chat-header-text">
+              <h4>Portfolio Assistant</h4>
+              <span class="chat-status">Online</span>
+            </div>
+          </div>
+          <button id="close-chat" class="close-chat-btn">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="chat-messages">
+          <div class="chat-message bot-message">
+            <div class="message-avatar">
+              <i class="bi bi-robot"></i>
+            </div>
+            <div class="message-content">
+              <p>Hi! I'm Thushan's Portfolio Assistant. How can I help you today?</p>
+              <span class="message-time">Just now</span>
+            </div>
+          </div>
+          <!-- Quick suggestions -->
+          <div class="quick-suggestions">
+            <button class="suggestion-btn" data-question="Who is Thushan?">Who is Thushan?</button>
+            <button class="suggestion-btn" data-question="What are his skills?">What skills?</button>
+            <button class="suggestion-btn" data-question="Show projects">View projects</button>
+            <button class="suggestion-btn" data-question="Contact info">Contact info</button>
+          </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+          <input
+            type="text"
+            id="chat-input"
+            class="chat-input"
+            placeholder="Ask me anything..."
+            autocomplete="off"
+          />
+          <button id="send-message" class="send-btn">
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Toggle Button -->
+      <button id="chat-toggle" class="chat-toggle">
+        <i class="bi bi-chat-dots-fill"></i>
+        <span class="chat-badge">1</span>
+      </button>
+    </div>
 
     <!-- Preloader -->
     <div id="preloader"></div>

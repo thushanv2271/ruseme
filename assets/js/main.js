@@ -259,4 +259,169 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Chatbot Functionality - Portfolio Assistant
+   */
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatWindow = document.getElementById('chat-window');
+  const closeChat = document.getElementById('close-chat');
+  const chatInput = document.getElementById('chat-input');
+  const sendMessage = document.getElementById('send-message');
+  const chatMessages = document.getElementById('chat-messages');
+  const chatBadge = document.querySelector('.chat-badge');
+
+  // Knowledge base for the chatbot
+  const knowledgeBase = {
+    'who is thushan': 'Thushan Vithana is a talented Software Engineering graduate from SLIIT with a CGPA of 3.17. He specializes in full-stack development, mobile applications, and modern web technologies including React Native, .NET, Java, and cloud solutions.',
+
+    'skills': 'Thushan has expertise in:\n• Frontend: React, React Native, Next.js, JavaScript, HTML/CSS\n• Backend: .NET, Java, Node.js, Python\n• Databases: MS SQL Server, MongoDB\n• Cloud & DevOps: Docker, Microsoft Power Apps\n• Mobile: iOS (SwiftUI), Android (Kotlin)\n• Version Control: Git, GitHub',
+
+    'projects': 'Thushan has worked on several impressive projects including:\n• SCOLA - Scholarship Requester Mobile App (React Native + .NET)\n• DR Management Platform\n• Vehicle Spare Parts Management System\n• AUTOWAG - Vehicle Rental System\n• Virtual Dressing Room (AR Technology)\n• And many more! Check the Projects section for details.',
+
+    'education': 'Thushan graduated from Sri Lanka Institute of Information Technology (SLIIT) in March 2025 with a BSc (Hons) in Software Engineering, achieving an overall CGPA of 3.17.',
+
+    'contact': 'You can reach Thushan through:\n• Email: Check the Contact section\n• LinkedIn: https://www.linkedin.com/in/thushan-vithana-89256917b/\n• GitHub: https://github.com/thushanvithana\n• YouTube: @ThushanVithana',
+
+    'experience': 'Thushan has experience as an Intern Software Engineer at SEER, where he contributed to projects using ASP.NET MVC, .NET Framework, Entity Framework, MS SQL Server, and Microsoft Power Apps, focusing on integrations with Microsoft Dynamics 365.',
+
+    'services': 'Thushan offers:\n• Mobile Application Development (iOS & Android)\n• Full-Stack Web Development (MERN Stack)\n• Cloud Solutions & Deployment\n• Custom Software Solutions\n• UI/UX Design Implementation',
+
+    'hello': 'Hello! 👋 I\'m here to help you learn more about Thushan Vithana\'s portfolio. Feel free to ask me anything!',
+
+    'help': 'I can help you with information about:\n• Thushan\'s background and education\n• Technical skills and expertise\n• Project portfolio\n• Work experience\n• Contact information\n• Services offered\n\nJust ask me anything!',
+  };
+
+  // Toggle chat window
+  if (chatToggle) {
+    chatToggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('active');
+      if (chatWindow.classList.contains('active')) {
+        chatInput.focus();
+        if (chatBadge) {
+          chatBadge.style.display = 'none';
+        }
+      }
+    });
+  }
+
+  // Close chat
+  if (closeChat) {
+    closeChat.addEventListener('click', () => {
+      chatWindow.classList.remove('active');
+    });
+  }
+
+  // Send message function
+  function handleSendMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // Add user message
+    addMessage(message, 'user');
+    chatInput.value = '';
+
+    // Get bot response
+    setTimeout(() => {
+      const response = getBotResponse(message);
+      addMessage(response, 'bot');
+    }, 500);
+  }
+
+  // Send message on button click
+  if (sendMessage) {
+    sendMessage.addEventListener('click', handleSendMessage);
+  }
+
+  // Send message on Enter key
+  if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleSendMessage();
+      }
+    });
+  }
+
+  // Quick suggestion buttons
+  const suggestionBtns = document.querySelectorAll('.suggestion-btn');
+  suggestionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const question = btn.getAttribute('data-question');
+      addMessage(question, 'user');
+      setTimeout(() => {
+        const response = getBotResponse(question);
+        addMessage(response, 'bot');
+      }, 500);
+    });
+  });
+
+  // Add message to chat
+  function addMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}-message`;
+
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'message-avatar';
+    avatarDiv.innerHTML = sender === 'bot' ? '<i class="bi bi-robot"></i>' : '<i class="bi bi-person-fill"></i>';
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+
+    const messageP = document.createElement('p');
+    messageP.textContent = text;
+
+    const timeSpan = document.createElement('span');
+    timeSpan.className = 'message-time';
+    timeSpan.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    contentDiv.appendChild(messageP);
+    contentDiv.appendChild(timeSpan);
+    messageDiv.appendChild(avatarDiv);
+    messageDiv.appendChild(contentDiv);
+
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Remove suggestions after first message
+    const suggestions = document.querySelector('.quick-suggestions');
+    if (suggestions && sender === 'user') {
+      suggestions.remove();
+    }
+  }
+
+  // Get bot response based on user input
+  function getBotResponse(message) {
+    const lowerMessage = message.toLowerCase();
+
+    // Check for exact or partial matches
+    for (const [key, value] of Object.entries(knowledgeBase)) {
+      if (lowerMessage.includes(key)) {
+        return value;
+      }
+    }
+
+    // Check for specific keywords
+    if (lowerMessage.includes('email') || lowerMessage.includes('mail')) {
+      return 'You can find Thushan\'s email address in the Contact section at the bottom of the page!';
+    }
+
+    if (lowerMessage.includes('phone') || lowerMessage.includes('mobile')) {
+      return 'Thushan\'s contact number is available in the Contact section of the portfolio!';
+    }
+
+    if (lowerMessage.includes('github') || lowerMessage.includes('git')) {
+      return 'You can find Thushan on GitHub at: https://github.com/thushanvithana';
+    }
+
+    if (lowerMessage.includes('linkedin')) {
+      return 'Connect with Thushan on LinkedIn: https://www.linkedin.com/in/thushan-vithana-89256917b/';
+    }
+
+    if (lowerMessage.includes('youtube')) {
+      return 'Check out Thushan\'s YouTube channel: @ThushanVithana';
+    }
+
+    // Default response
+    return 'I\'m not sure about that specific question. You can ask me about Thushan\'s skills, projects, education, experience, services, or contact information. How can I help you?';
+  }
+
 })();
