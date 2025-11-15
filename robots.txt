@@ -1,0 +1,15 @@
+# robots.txt for Thushan Vithana Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thushanvithana.github.io/ruseme/sitemap.xml
+
+# Disallow vendor and asset directories from crawling
+Disallow: /assets/vendor/
+Disallow: /forms/
+
+# Allow all CSS and JS files
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
