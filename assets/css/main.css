@@ -383,18 +383,23 @@ h6 { font-size: 1rem; }
   top: 20px;
   left: 20px;
   bottom: 20px;
-  padding: 20px;
+  padding: 15px 10px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 997;
-  width: 260px;
+  width: 70px;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   border-radius: 24px;
+}
+
+.header:hover {
+  width: 240px;
+  padding: 20px;
 }
 
 .header::before {
@@ -421,6 +426,15 @@ h6 { font-size: 1rem; }
   margin-bottom: 25px;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), transparent);
   border-radius: 16px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header:hover .profile-section {
+  opacity: 1;
+  max-height: 400px;
 }
 
 .header .profile-img {
@@ -501,11 +515,11 @@ h6 { font-size: 1rem; }
 
 @media (min-width: 1200px) {
   .header ~ main {
-    margin-left: 300px;
+    margin-left: 110px;
   }
 
   .header ~ main .hero {
-    margin-left: -300px;
+    margin-left: -110px;
     width: 100vw;
   }
 }
@@ -598,8 +612,9 @@ h6 { font-size: 1rem; }
 .navmenu .nav-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 15px;
-  padding: 14px 20px;
+  padding: 12px;
   color: var(--default-color);
   font-family: var(--nav-font);
   font-size: 15px;
@@ -613,6 +628,14 @@ h6 { font-size: 1rem; }
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  width: 50px;
+  height: 50px;
+}
+
+.header:hover .navmenu .nav-link {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 14px 20px;
 }
 
 .navmenu .nav-link::before {
@@ -631,8 +654,8 @@ h6 { font-size: 1rem; }
 }
 
 .navmenu .nav-link i {
-  font-size: 20px;
-  min-width: 20px;
+  font-size: 22px;
+  min-width: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -642,14 +665,25 @@ h6 { font-size: 1rem; }
 .navmenu .nav-link span {
   flex: 1;
   white-space: nowrap;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
   transition: all 0.3s ease;
+}
+
+.header:hover .navmenu .nav-link span {
+  opacity: 1;
+  max-width: 200px;
 }
 
 .navmenu .nav-link:hover {
   background: rgba(59, 130, 246, 0.15);
   border-color: rgba(59, 130, 246, 0.3);
-  transform: translateX(5px);
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+.header:hover .navmenu .nav-link:hover {
+  transform: translateX(5px);
 }
 
 .navmenu .nav-link:hover i {
@@ -677,20 +711,42 @@ h6 { font-size: 1rem; }
 .navmenu .nav-link.active::after {
   content: '';
   position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 8px;
+  top: 8px;
   width: 6px;
   height: 6px;
   background: white;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+}
+
+.header:hover .navmenu .nav-link.active::after {
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media (max-width: 1199px) {
+  .header {
+    width: 280px;
+  }
+
+  .header .profile-section {
+    opacity: 1;
+    max-height: 400px;
+  }
+
   .navmenu .nav-link {
     padding: 16px 20px;
     font-size: 16px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .navmenu .nav-link span {
+    opacity: 1;
+    max-width: 200px;
   }
 }
 
