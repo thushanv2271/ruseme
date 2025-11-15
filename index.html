@@ -172,39 +172,57 @@
     </header>
 
     <main class="main">
-      <!-- Hero Section -->
+      <!-- Hero Section - Liquid Glass Design -->
       <section id="hero" class="hero section">
-        <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
-          <div class="row justify-content-center text-center">
-            <div class="col-lg-10">
-              <h2 class="hero-title">
-                Hi there <span class="wave-hand">👋</span><br>
-                I'm Thushan Vithana
-                <span class="d-block mt-3">🚀 Let's build something incredible together.</span>
-              </h2>
+        <!-- Background Image -->
+        <img src="assets/img/hero-bg.jpg" alt="" class="hero-bg-img" data-aos="fade-in">
 
-              <p class="hero-subtitle">
-                I'm
-                <span
-                  class="typed"
-                  data-typed-items="Designer, Developer, Software Engineer, UI/UX Designer, Team Player, Innovator, Photographer"
-                  >Designer</span
-                >
-              </p>
-              <div class="social-links d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#" aria-label="Instagram">
-                  <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" aria-label="LinkedIn">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://www.youtube.com/@ThushanVithana" aria-label="YouTube">
-                  <i class="bi bi-youtube"></i>
-                </a>
-                <a href="https://github.com/thushanvithana" aria-label="GitHub">
-                  <i class="bi bi-github"></i>
-                </a>
+        <!-- Liquid Glass Content Card -->
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="hero-glass-wrapper">
+
+                <!-- Main Title -->
+                <h2 class="hero-title">
+                  Hi there <span class="wave-hand">👋</span><br>
+                  I'm <span class="hero-name">Thushan Vithana</span>
+                </h2>
+
+                <!-- Subtitle with Rocket -->
+                <p class="hero-tagline">
+                  <span class="hero-rocket">🚀</span> Let's build something incredible together.
+                </p>
+
+                <!-- Typed Subtitle -->
+                <div class="hero-subtitle-container">
+                  <p class="hero-subtitle">
+                    I'm
+                    <span
+                      class="typed hero-typed-text"
+                      data-typed-items="Designer, Developer, Software Engineer, UI/UX Designer, Team Player, Innovator, Photographer"
+                    >Designer</span>
+                  </p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="hero-social-wrapper">
+                  <div class="hero-social-links">
+                    <a href="https://github.com/thushanvithana" class="hero-social-btn" aria-label="GitHub" target="_blank">
+                      <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/thushan-vithana-89256917b/" class="hero-social-btn" aria-label="LinkedIn" target="_blank">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@ThushanVithana" class="hero-social-btn" aria-label="YouTube" target="_blank">
+                      <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="#" class="hero-social-btn" aria-label="Instagram" target="_blank">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -213,97 +231,8 @@
 
       <!-- About Section -->
       <section id="about" class="about section">
-   
-
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4 justify-content-center">
-           
-
-            <!-- Add this style block or move it to a separate CSS file -->
-            <style>
-              @keyframes pulse-border {
-                0% {
-                  box-shadow: 0 0 10px #3498db;
-                }
-                50% {
-                  box-shadow: 0 0 20px #3498db;
-                }
-                100% {
-                  box-shadow: 0 0 10px #3498db;
-                }
-              }
-            </style>
-            <style>
-              .content {
-                background: #f9f9f9;
-                padding: 30px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                color: #333;
-              }
-              .content h2 {
-                font-size: 2rem;
-                color: #0563bb;
-                margin-bottom: 20px;
-                font-weight: bold;
-                text-transform: uppercase;
-              }
-              .content p.fst-italic {
-                font-style: italic;
-                font-size: 1.1rem;
-                line-height: 1.6;
-                margin-bottom: 20px;
-              }
-              .content ul {
-                list-style: none;
-                padding: 0;
-              }
-              .content ul li {
-                display: flex;
-                align-items: center;
-                margin-bottom: 15px;
-              }
-              .content ul li i {
-                font-size: 1.2rem;
-                color: #0563bb;
-                margin-right: 10px;
-              }
-              .content ul li strong {
-                font-weight: bold;
-                color: #555;
-                margin-right: 5px;
-              }
-              .content ul li span a {
-                color: #0563bb;
-                text-decoration: none;
-              }
-              .content ul li span a:hover {
-                text-decoration: underline;
-              }
-              .row {
-                margin-top: 20px;
-              }
-              .content p.py-3 {
-                font-size: 1rem;
-                line-height: 1.8;
-                color: #666;
-              }
-            </style>
-          <!-- Add Animate.css CDN for pre-built animations -->
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/>
-
-
-
-<!-- Custom CSS for Animations -->
-<style>
-/* Ensure animations run smoothly */
-.animate__animated {
-  --animate-duration: 1s;
-}
-</style>
           </div>
         </div>
       </section>
