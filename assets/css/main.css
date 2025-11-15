@@ -370,7 +370,7 @@ h6 { font-size: 1rem; }
   padding: 25px 15px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: visible;
   z-index: 997;
   width: 80px;
   background: rgba(255, 255, 255, 0.7);
@@ -581,7 +581,8 @@ h6 { font-size: 1rem; }
   background: rgba(59, 130, 246, 0.05);
   height: 50px;
   width: 50px;
-  overflow: hidden;
+  min-width: 50px;
+  overflow: visible;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -595,9 +596,13 @@ h6 { font-size: 1rem; }
 
 .navmenu a i,
 .navmenu a:focus i {
-  font-size: 20px;
+  font-size: 22px;
   transition: all 0.3s ease;
-  min-width: 20px;
+  min-width: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navmenu a span,
@@ -1378,6 +1383,23 @@ section,
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+/* Force isotope container to use flexbox instead of absolute positioning */
+.isotope-container {
+  position: relative !important;
+  height: auto !important;
+}
+
+.isotope-container .portfolio-item {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .portfolio .portfolio-item .portfolio-info {
